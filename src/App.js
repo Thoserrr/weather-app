@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'; 
 import axios from 'axios';
 import { FiSearch } from 'react-icons/fi'; // ไอคอนค้นหา
 import { WiDaySunny, WiCloudy, WiRain, WiSnow, WiThunderstorm, WiShowers, WiWindy } from 'react-icons/wi'; // ไอคอนแสดงสภาพอากาศ
@@ -100,10 +100,18 @@ function App() {
     }
   };
 
+  // ดึงวันที่ปัจจุบัน
+  const currentDate = new Date().toLocaleDateString();
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-center py-10" style={{ background: 'linear-gradient(-35deg,rgb(16, 81, 147) 0%,rgb(162, 204, 225))' }}>
-      <div className="bg-white max-w-md w-full rounded-x1 shadow-2xl p-8 rounded-xl">
-{/* Search Bar */}
+      <div className="bg-white max-w-md w-full rounded-xl shadow-2xl p-8">
+        {/* แสดงวันที่ปัจจุบัน */}
+        <div className="text-center mb-4">
+          <h3 className="text-xl font-bold text-gray-800">{currentDate}</h3>
+        </div>
+
+        {/* Search Bar */}
         <div className="flex justify-between items-center mb-4">
           <input
             type="text"
